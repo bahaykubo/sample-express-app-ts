@@ -1,0 +1,8 @@
+###
+GET http://localhost:5050/hello
+
+###
+GET http://localhost:5050/where?location=bingbong
+
+###
+GET http://localhost:5050/where
