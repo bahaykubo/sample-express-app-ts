@@ -3,11 +3,11 @@ import { hello, where } from 'sample-npm-module';
 
 const app = express();
 
-app.get('/hello', function(request, response) {
+app.get('/hello', function (request, response) {
   response.json(hello());
 });
 
-app.get('/where', function(request, response) {
+app.get('/where', function (request, response) {
   const location = request.query?.location?.toString();
   if (location) {
     response.json(where(location));
@@ -18,4 +18,4 @@ app.get('/where', function(request, response) {
 
 app.listen(5050, () => {
   console.log('server started at http://localhost:5050');
-} );
+});

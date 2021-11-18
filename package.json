@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint app",
+    "lint-fix": "eslint app --fix && yarn lint",
     "build": "tsc",
     "start-dev": "nodemon --ext ts --exec 'yarn build --incremental && yarn start'",
     "start": "node ."
