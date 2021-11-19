@@ -1,17 +1,19 @@
 import express from 'express';
-import { hello, where } from 'sample-npm-module';
 
 const app = express();
 
 app.get('/hello', function (request, response) {
-  response.json(hello());
+  console.log('got hello');
+  response.json({ hello: 'guard' });
 });
 
 app.get('/where', function (request, response) {
   const location = request.query?.location?.toString();
   if (location) {
-    response.json(where(location));
+    console.log(`got location for ${location}`);
+    response.json({ location });
   } else {
+    console.log('got request but no location');
     response.sendStatus(404);
   }
 });
